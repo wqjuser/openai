@@ -10,7 +10,8 @@ class OpenAIChatCompletionChoiceMessageContentItemModel {
   final String? text;
 
   /// The image url content of the item.
-  final String? imageUrl;
+  final Map<String,String>? imageUrl;
+
 
   @override
   int get hashCode => type.hashCode ^ text.hashCode ^ imageUrl.hashCode;
@@ -43,7 +44,7 @@ class OpenAIChatCompletionChoiceMessageContentItemModel {
 
   /// Represents a image content item factory, which is used to create a image [OpenAIChatCompletionChoiceMessageContentItemModel].
   factory OpenAIChatCompletionChoiceMessageContentItemModel.imageUrl(
-    String imageUrl,
+      Map<String,String> imageUrl,
   ) {
     return OpenAIChatCompletionChoiceMessageContentItemModel._(
       type: 'image_url',
